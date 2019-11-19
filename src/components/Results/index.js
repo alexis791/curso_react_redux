@@ -8,8 +8,6 @@ class Results extends React.Component {
 
         const { suggestions } = this.props
 
-        console.log(this.props)
-
         return(
             <Page
                 suggestions = {suggestions}

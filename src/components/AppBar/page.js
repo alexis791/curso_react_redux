@@ -5,23 +5,29 @@ import Typography from '@material-ui/core/Typography'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import Autocomplete from '../Autocomplete'
 
-const Page = () => (
-    <AppBar position="static">
-        <Toolbar className="appbar">
-            <Typography variant="h6" color="inherit">
-                Búsqueda
-            </Typography>
+const Page = (props) => {
 
-            <Autocomplete
-                text={'react'}
-                suggestions={[]}
-                onChangeText={(text) => {}}
-                onChangeSeleccion={(text) => {}}
-            />
+    console.log(props)
+    const { text, onChangeSeleccion, onChangeText, suggestions } = props
 
-            <AccountCircle />
-        </Toolbar>
-    </AppBar>
-)
+    return(
+        <AppBar position="static">
+            <Toolbar className="appbar">
+                <Typography variant="h6" color="inherit">
+                    Búsqueda
+                </Typography>
+
+                <Autocomplete
+                    text={text}
+                    suggestions={suggestions}
+                    onChangeText={onChangeText}
+                    onChangeSeleccion={onChangeSeleccion}
+                />
+
+                <AccountCircle />
+            </Toolbar>
+        </AppBar>
+    )
+}
 
 export default Page

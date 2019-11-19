@@ -1,15 +1,63 @@
 import React from 'react'
 import Page from './page'
+import './style.css'
+import { connect } from 'react-redux'
+
+import findSuggestions from '../../redux/actions/findSuggestions'
 
 class AppBar extends React.Component {
+
+    constructor(props){
+        super(props)
+
+        this.state={
+            text:''
+        }
+
+        this.onChangeText = this.onChangeText.bind(this)
+        this.onChangeSelection = this.onChangeSelection.bind(this)
+    }
+
+    
+
+
+    onChangeText(text) {
+        this.setState({ text })
+
+        // this.props.findSuggestions(text)
+    }
+
+    onChangeSelection(text){
+
+    }
     
     render(){
+
+        console.log(this.props)
+
+        const { text } = this.state
+        const { suggestions } = this.props
+
         return(
-            <Page/>
+            <Page
+                text={text}
+                suggestions={suggestions}
+                onChangeText={this.onChangeText}
+                onChangeSelection={this.onChangeSelection}
+            />
         )
     }
 
 }
 
+const mapStateToProps = (state) => {
+    return{
+        suggestions: state.suggestions
+    }
+}
 
-export default AppBar
+const mapDispatchToProps = {
+        findSuggestions
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppBar)

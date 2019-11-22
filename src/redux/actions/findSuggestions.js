@@ -1,8 +1,8 @@
-export const type = 'findSuggestions'
+export const FIND_SUGGESTIONS = 'FIND_SUGGESTIONS'
 
 const findSuggestions = text => {
     return {
-        type,
+        type: FIND_SUGGESTIONS,
         payload: text
     }
 }

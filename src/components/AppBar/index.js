@@ -4,6 +4,7 @@ import './style.css'
 import { connect } from 'react-redux'
 
 import findSuggestions from '../../redux/actions/findSuggestions'
+import findResults from '../../redux/actions/findResults'
 
 class AppBar extends React.Component {
 
@@ -18,17 +19,17 @@ class AppBar extends React.Component {
         this.onChangeSelection = this.onChangeSelection.bind(this)
     }
 
-    
-
 
     onChangeText(text) {
         this.setState({ text })
 
-        // this.props.findSuggestions(text)
+        this.props.findSuggestions(text)
     }
 
     onChangeSelection(text){
+        this.setState({ text })
 
+        this.props.findResults(text)
     }
     
     render(){
@@ -57,7 +58,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-        findSuggestions
+        findSuggestions,
+        findResults
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppBar)

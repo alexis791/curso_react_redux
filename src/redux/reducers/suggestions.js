@@ -1,5 +1,8 @@
 import items from '../../data/items'
+<<<<<<< HEAD
 import { FIND_SUGGESTIONS } from '../actions/findSuggestions'
+=======
+>>>>>>> 436c310f2c4de585124af5b1a9045b1f7e624655
 
 const defaultState = items
 

@@ -7,9 +7,13 @@ class Results extends React.Component {
     
     render(){
 
+<<<<<<< HEAD
         console.log(this.props)
 
         const { results } = this.props
+=======
+        const { suggestions } = this.props
+>>>>>>> 436c310f2c4de585124af5b1a9045b1f7e624655
 
         return(
             <Page

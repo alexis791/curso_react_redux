@@ -8,7 +8,7 @@ import Autocomplete from '../Autocomplete'
 const Page = (props) => {
 
     console.log(props)
-    const { text, onChangeSeleccion, onChangeText, suggestions } = props
+    const { text, onChangeSelection, onChangeText, suggestions } = props
 
     return(
         <AppBar position="static">
@@ -21,7 +21,7 @@ const Page = (props) => {
                     text={text}
                     suggestions={suggestions}
                     onChangeText={onChangeText}
-                    onChangeSeleccion={onChangeSeleccion}
+                    onChangeSelection={onChangeSelection}
                 />
 
                 <AccountCircle />
